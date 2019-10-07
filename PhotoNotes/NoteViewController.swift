@@ -10,7 +10,9 @@ import UIKit
 
 
 
-class NoteViewController: UIViewController {
+class NoteViewController: UIViewController, Identifiable {
+    
+    var id: AnyHashable = ""
     var noteContext: MutableContext<String?>!
     var imageContext: Context<UIImage?>!
     @IBOutlet weak var imageView: UIImageView!
@@ -20,7 +22,10 @@ class NoteViewController: UIViewController {
         super.viewDidLoad()
         
         noteContext { [weak textView] in textView?.text = $0 }
-        imageContext { [weak imageView] in imageView?.image = $0 }
+        imageContext { [weak imageView] in
+            imageView?.image = $0 == nil ? imageView?.image : $0
+            
+        }
         
         textView.delegate = self
     }
