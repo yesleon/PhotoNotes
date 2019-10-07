@@ -10,11 +10,11 @@ import UIKit
 
 
 
-class NoteViewController: UIViewController, Identifiable {
+class NoteViewController: UIViewController {
     
-    var id: AnyHashable = ""
+    var pagesContext: Context<(Int) -> UIViewController?>!
     var noteContext: MutableContext<String?>!
-    var imageContext: Context<UIImage?>!
+    var imageContext: AsynchronousContext<UIImage?>!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textView: UITextView!
     

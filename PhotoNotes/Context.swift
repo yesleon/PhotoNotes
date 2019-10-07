@@ -8,5 +8,8 @@
 
 import Foundation
 
-typealias MutableContext<Value> = (@escaping (inout Value) -> Void) -> Void
-typealias Context<Value> = (@escaping (Value) -> Void) -> Void
+
+typealias Context<Value> = ((Value) -> Void) -> Void
+typealias MutableContext<Value> = ((inout Value) -> Void) -> Void
+typealias AsynchronousContext<Value> = (@escaping (Value) -> Void) -> Void
+typealias AsynchronousMutableContext<Value> = (@escaping (inout Value) -> Void) -> Void

@@ -50,8 +50,19 @@ class NoteTableViewController: UITableViewController {
     }
     
     fileprivate func makeNoteViewController(asset: PHAsset) -> UIViewController? {
+        
         guard let noteVC = storyboard?.instantiateViewController(identifier: "NoteViewController") as? NoteViewController else { return nil }
-        noteVC.id = asset
+        noteVC.pagesContext = { handler in
+            handler { [weak self] in
+                guard let self = self else { return nil }
+                let index = self.assets.index(of: asset)
+                guard index != NSNotFound else { return nil }
+                let newIndex = index + $0
+                guard newIndex >= 0, newIndex < self.assets.count else { return nil }
+                let newAsset = self.assets.object(at: newIndex)
+                return self.makeNoteViewController(asset: newAsset)
+            }
+        }
         noteVC.noteContext = { [weak self] handler in
             guard let self = self else { return }
             handler(&self.notes[asset.localIdentifier])
@@ -91,24 +102,18 @@ class NoteTableViewController: UITableViewController {
 extension NoteTableViewController: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let noteVC = viewController as? NoteViewController,
-            let asset = noteVC.id as? PHAsset else { return nil }
-        let index = assets.index(of: asset)
-        guard index != NSNotFound else { return nil }
-        let newIndex = index - 1
-        guard newIndex >= 0 else { return nil }
-        let newAsset = assets.object(at: newIndex)
-        return makeNoteViewController(asset: newAsset)
+        var vc: UIViewController?
+        (viewController as? NoteViewController)?.pagesContext { constructor in
+            vc = constructor(-1)
+        }
+        return vc
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let noteVC = viewController as? NoteViewController,
-            let asset = noteVC.id as? PHAsset else { return nil }
-        let index = assets.index(of: asset)
-        guard index != NSNotFound else { return nil }
-        let newIndex = index + 1
-        guard newIndex < assets.count else { return nil }
-        let newAsset = assets.object(at: newIndex)
-        return makeNoteViewController(asset: newAsset)
+        var vc: UIViewController?
+        (viewController as? NoteViewController)?.pagesContext { constructor in
+            vc = constructor(+1)
+        }
+        return vc
     }
 }
