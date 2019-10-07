@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		71BCCBCA234AE863004AD3C6 /* NoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BCCBC9234AE863004AD3C6 /* NoteTableViewController.swift */; };
+		71BCCBCE234AEAC6004AD3C6 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BCCBCD234AEAC6004AD3C6 /* NoteTableViewCell.swift */; };
+		71BCCBD0234AEC0A004AD3C6 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BCCBCF234AEC0A004AD3C6 /* NoteViewController.swift */; };
+		71BCCBD2234AF4EE004AD3C6 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BCCBD1234AF4EE004AD3C6 /* Context.swift */; };
 		71D42ABB234AE76C001AED02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D42ABA234AE76C001AED02 /* AppDelegate.swift */; };
 		71D42ABD234AE76C001AED02 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D42ABC234AE76C001AED02 /* SceneDelegate.swift */; };
 		71D42AC2234AE76C001AED02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71D42AC0234AE76C001AED02 /* Main.storyboard */; };
@@ -17,6 +20,9 @@
 
 /* Begin PBXFileReference section */
 		71BCCBC9234AE863004AD3C6 /* NoteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewController.swift; sourceTree = "<group>"; };
+		71BCCBCD234AEAC6004AD3C6 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
+		71BCCBCF234AEC0A004AD3C6 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		71BCCBD1234AF4EE004AD3C6 /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		71D42AB7234AE76C001AED02 /* PhotoNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D42ABA234AE76C001AED02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71D42ABC234AE76C001AED02 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +66,9 @@
 				71D42ABC234AE76C001AED02 /* SceneDelegate.swift */,
 				71D42AC0234AE76C001AED02 /* Main.storyboard */,
 				71BCCBC9234AE863004AD3C6 /* NoteTableViewController.swift */,
+				71BCCBCD234AEAC6004AD3C6 /* NoteTableViewCell.swift */,
+				71BCCBCF234AEC0A004AD3C6 /* NoteViewController.swift */,
+				71BCCBD1234AF4EE004AD3C6 /* Context.swift */,
 				71D42AC3234AE76D001AED02 /* Assets.xcassets */,
 				71D42AC5234AE76D001AED02 /* LaunchScreen.storyboard */,
 				71D42AC8234AE76D001AED02 /* Info.plist */,
@@ -141,6 +150,9 @@
 				71BCCBCA234AE863004AD3C6 /* NoteTableViewController.swift in Sources */,
 				71D42ABB234AE76C001AED02 /* AppDelegate.swift in Sources */,
 				71D42ABD234AE76C001AED02 /* SceneDelegate.swift in Sources */,
+				71BCCBD2234AF4EE004AD3C6 /* Context.swift in Sources */,
+				71BCCBD0234AEC0A004AD3C6 /* NoteViewController.swift in Sources */,
+				71BCCBCE234AEAC6004AD3C6 /* NoteTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
